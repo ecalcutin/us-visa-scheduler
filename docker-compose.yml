@@ -11,7 +11,10 @@ services:
       - .env
     environment:
       - DISPLAY=:0
-      # - PWDEBUG=1
+    depends_on:
+      - database
+    restart: always
+
   database:
     image: mongo:latest
     restart: always
