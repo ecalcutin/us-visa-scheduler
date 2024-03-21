@@ -1,0 +1,27 @@
+version: "3"
+services:
+  executor:
+    image: ecalcutin/us-visa-automation-executor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    env_file:
+      - .env
+    environment:
+      - DISPLAY=:0
+      # - PWDEBUG=1
+  database:
+    image: mongo:latest
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=visa-automate
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=Iamtheone1
+    command: mongod --config /etc/mongod.conf
+    volumes:
+      - ./mongod.conf:/etc/mongod.conf
+      - ./mongodb:/data/db
+    ports:
+      - "27017:27017"

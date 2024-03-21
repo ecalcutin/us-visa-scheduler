@@ -1,0 +1,1 @@
+export { getBrowser } from "./getBrowser";

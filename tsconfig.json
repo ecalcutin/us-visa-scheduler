@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": "./src",
+    "outDir": "./build",
+    "module": "NodeNext",
+    "inlineSourceMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
