@@ -5,4 +5,5 @@ node_modules/
 /playwright/.cache/
 node_modules
 mongodb
+build
 .env

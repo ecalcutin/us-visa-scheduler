@@ -48,13 +48,6 @@ const boot = async () => {
       const isSameResult =
         hasPrevDates && record?.hash === JSON.stringify(schedules);
 
-      // LOGS
-      // console.log({ hasPrevDates });
-      // console.log({ isSameResult });
-      // console.log("hash: ", record?.hash);
-      // console.log(JSON.stringify(schedules));
-      // END LOGS
-
       // Если приходит пустой массив с датами, значит слотов нет.
       if (schedules.dates.length === 0) {
         await sendEmptyDatesNotification();
@@ -80,7 +73,7 @@ const boot = async () => {
       await task.page.close();
     } catch (e) {
       console.error(e);
-      await sendErrorNotification(e);
+      // await sendErrorNotification(e);
       // Если в предыдущей итерации была ошибка, увеличиваем таймер
       if (isFail) {
         failureWaitTime += failureWaitTime / 2;

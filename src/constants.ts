@@ -16,7 +16,7 @@ export const DEV_CHAT_ID = 450977116;
 /**
  * Время паузы между итерациями получения данных в милисекундах
  */
-export const WAIT_TIME = 1000 * 5;
+export const WAIT_TIME = 1000 * 30;
 
 /**
  * Начальное значение времени паузы после ошибки TIMEOUT, рестарт скрипта. В милисекундах
@@ -26,5 +26,5 @@ export const FAILURE_WAIT_TIME = 1000 * 10;
 /**
  * Максимальное время ожидания элемента
  */
-export const FAILURE_LOCATOR_TIME = 1000 * 5;
+export const FAILURE_LOCATOR_TIME = 1000 * 10;
 
